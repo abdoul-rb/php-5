@@ -1,0 +1,25 @@
+/:
+  controller: Default
+  action: default
+
+
+/se-connecter:
+  controller: User
+  action: login
+
+/s-inscrire:
+  controller: User
+  action: register
+
+/mot-de-passe-oublie:
+  controller: User
+  action: forgotPwd
+
+
+/ajout-utilisateur:
+  controller: User
+  action: add
+
+/liste-des-utilisateurs:
+  controller: User
+  action: list
