@@ -4,14 +4,13 @@
  * Autoloading de PHP
  */
 
-/**
- * Systeme de routing natif
- */
-
 // require 'core/Autoloader.class.php';
 // Autoloader::register();
 
-
+/**
+ * Autoloader de PHP
+ * @param $className  la classe à charger
+ */
 function myAutoload($className)
 {
     if (file_exists("core/" . $className . ".class.php")) {
@@ -29,11 +28,17 @@ $uri = $_SERVER['REQUEST_URI'];
 
 $listOfRoutes = yaml_parse_file("routes.yml");
 
+echo '<pre>';
+print_r($listOfRoutes);
+print_r($listOfRoutes[$uri]['action']);
+die(!empty($listOfRoutes[$uri]));
+echo '</pre>';
+
 if (!empty($listOfRoutes[$uri])) {
     $controller = $listOfRoutes[$uri]['controller'] . 'Controller';
     $action = $listOfRoutes[$uri]['action'] . 'Action';
 
-    // Vérification s'il existe dans le dossier /controllers une class Controller
+    // Vérification s'il existe dans le dossier/controllers une class Controller
     if (file_exists("controllers/" . $controller . ".class.php")) {
         include "controllers/" . $controller . ".class.php";
 
@@ -52,7 +57,7 @@ if (!empty($listOfRoutes[$uri])) {
         die("Le fichier du controller n'existe pas: controllers/" . $controller . ".class.php");
     }
 } else {
-    //Renvoyer une page 404 définie
+    //Renvoyer une page 404 définie lorsque $listOfRoutes[$uri] est vide
     die("L'URL n'existe pas : ERROR 404 ");
 }
 

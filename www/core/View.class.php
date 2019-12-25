@@ -4,7 +4,7 @@ class View
 {
     private $view;
     private $template;
-    //Tableau de données pour passer des paramètres à nos vues
+    // Tableau de données pour passer des paramètres à nos vues
     private $data = [];
     
     public function __construct($view, $template="back")

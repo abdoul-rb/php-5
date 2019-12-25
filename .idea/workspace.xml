@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5824013-ab6d-4286-87c8-b5bb7dde0c01" name="Default Changelist" comment="" />
+    <list default="true" id="c5824013-ab6d-4286-87c8-b5bb7dde0c01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/ConstLoader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/ConstLoader.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/DB.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/DB.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/View.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/View.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/routes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/www/routes.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +20,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Umle6MpA9979RD8JZPdCJdE6KR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,6 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -47,6 +59,13 @@
       <updated>1575970283856</updated>
       <workItem from="1575970307903" duration="4118000" />
       <workItem from="1575974483687" duration="4675000" />
+      <workItem from="1576015645917" duration="2376000" />
+      <workItem from="1576191252958" duration="4177000" />
+      <workItem from="1576486421118" duration="47000" />
+      <workItem from="1576592971153" duration="46000" />
+      <workItem from="1576789887612" duration="1108000" />
+      <workItem from="1576791500068" duration="1428000" />
+      <workItem from="1576872531577" duration="5191000" />
     </task>
     <servers />
   </component>
@@ -54,9 +73,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1575974485940">
+    <state x="383" y="27" width="642" height="741" key="#site/Dockerfile" timestamp="1576789918955">
       <screen x="53" y="27" width="1313" height="741" />
     </state>
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1575974485940" />
+    <state x="383" y="27" width="642" height="741" key="#site/Dockerfile/53.27.1313.741@53.27.1313.741" timestamp="1576789918955" />
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1576872539269">
+      <screen x="53" y="27" width="1313" height="741" />
+    </state>
+    <state x="396" y="413" key="com.intellij.ide.util.TipDialog/1920.158.1366.768/0.185.1920.895@0.185.1920.895" timestamp="1576486421759" />
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1576872539269" />
   </component>
 </project>

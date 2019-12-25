@@ -4,6 +4,7 @@ class DB
 {
     private $table;
     private $pdo;
+    private static $_instance;
 
     // SINGLETON
     public function __construct()
@@ -15,6 +16,13 @@ class DB
         }
 
         $this->table = PREFIXE_DB . get_called_class();
+    }
+
+    public static function getInstance()
+    {
+        if (is_null(self::$_instance)){
+
+        }
     }
 
     public function save()
