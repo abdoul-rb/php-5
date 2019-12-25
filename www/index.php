@@ -28,12 +28,6 @@ $uri = $_SERVER['REQUEST_URI'];
 
 $listOfRoutes = yaml_parse_file("routes.yml");
 
-echo '<pre>';
-print_r($listOfRoutes);
-print_r($listOfRoutes[$uri]['action']);
-die(!empty($listOfRoutes[$uri]));
-echo '</pre>';
-
 if (!empty($listOfRoutes[$uri])) {
     $controller = $listOfRoutes[$uri]['controller'] . 'Controller';
     $action = $listOfRoutes[$uri]['action'] . 'Action';
