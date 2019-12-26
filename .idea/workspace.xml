@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5824013-ab6d-4286-87c8-b5bb7dde0c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/Autoloader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Autoloader.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Router.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/View.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/View.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/script/cacheForRoutes.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/script/cacheForRoutes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CONTRIBUTORS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,7 @@
       <workItem from="1576791500068" duration="1428000" />
       <workItem from="1576872531577" duration="5191000" />
       <workItem from="1577398509724" duration="26000" />
-      <workItem from="1577398556873" duration="4094000" />
+      <workItem from="1577398556873" duration="4289000" />
     </task>
     <servers />
   </component>
