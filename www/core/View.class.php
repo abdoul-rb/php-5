@@ -16,6 +16,7 @@ class View
     public function setTemplate($template)
     {
         $this->template = strtolower(trim($template));
+
         if (!file_exists("views/templates/" . $this->template . ".layout.php")) {
             die("Le template n'existe pas");
         }
@@ -44,8 +45,8 @@ class View
     }
 
     /**
-     * addModal permet d'ntégrer un modal dans une vue
-     * Capacité de recentraliser un ensemble de fonctionnalité dont on pourra réutiliser
+     * addModal permet d'intégrer un modal dans une vue
+     * Modal : Capacité de recentraliser un ensemble de fonctionnalité dont on pourra réutiliser
      *
      * @param  mixed $modal
      * @param  mixed $data
@@ -63,9 +64,6 @@ class View
     
     public function __destruct()
     {
-        // $this->data -> ["name"=>"yves"];
-        //$name = "yves"
-
         extract($this->data);
 
         include "views/templates/" . $this->template . ".layout.php";

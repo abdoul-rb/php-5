@@ -1,11 +1,24 @@
 <?php
 
+/**
+ * Permet de gérer le routing
+ *
+ * * Markdown style lists function too
+ * * Just try this out once
+ *
+ * @author  Mike van Riel <me@mikevanriel.com>
+ *
+ * @since 1.0
+ *
+ * @param int    $uri  L'URL passé, sur laquelle on se trouve
+ * @param string $listOfRoutes La liste des routes récupéré depuis le fichier de routes
+ */
 class Router
 {
     private $uri;
     private $listOfRoutes;
 
-    public function __construct(string $uri, $listOfRoutes)
+    public function __construct($uri, $listOfRoutes)
     {
         $this->uri = $uri;
         $this->listOfRoutes = $listOfRoutes;
