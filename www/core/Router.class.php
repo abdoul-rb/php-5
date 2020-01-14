@@ -61,7 +61,7 @@ class Router
 
  * $args = explode('/', $uri);
 
- * $controller = ucfirst((empty($args[0])) ? 'default' : $args[0]) . 'Controller';
+ * $controller = ucfirst(((empty($args[0])) ? 'default' : $args[0]) . 'Controller';
  * $action = ((empty($args[1])) ? 'default' : $args[1]) . 'Action';
 
  * if(file_exists('controllers/' . $controller . '.class.php'))

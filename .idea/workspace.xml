@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5824013-ab6d-4286-87c8-b5bb7dde0c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CONTRIBUTORS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Router.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,10 @@
       <workItem from="1576791500068" duration="1428000" />
       <workItem from="1576872531577" duration="5191000" />
       <workItem from="1577398509724" duration="26000" />
-      <workItem from="1577398556873" duration="4289000" />
+      <workItem from="1577398556873" duration="5002000" />
+      <workItem from="1577466751532" duration="3759000" />
+      <workItem from="1577901150433" duration="27000" />
+      <workItem from="1579006669785" duration="331000" />
     </task>
     <servers />
   </component>
@@ -77,14 +82,14 @@
       <screen x="53" y="27" width="1313" height="741" />
     </state>
     <state x="383" y="27" width="642" height="741" key="#site/Dockerfile/53.27.1313.741@53.27.1313.741" timestamp="1576789918955" />
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1577398560057">
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1577901159549">
       <screen x="53" y="27" width="1313" height="741" />
     </state>
     <state x="396" y="413" key="com.intellij.ide.util.TipDialog/1920.158.1366.768/0.185.1920.895@0.185.1920.895" timestamp="1576486421759" />
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1577398560057" />
-    <state x="373" y="175" key="run.anything.popup" timestamp="1577402532616">
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1577901159549" />
+    <state x="373" y="175" key="run.anything.popup" timestamp="1577403467334">
       <screen x="53" y="27" width="1313" height="741" />
     </state>
-    <state x="373" y="175" key="run.anything.popup/53.27.1313.741@53.27.1313.741" timestamp="1577402532616" />
+    <state x="373" y="175" key="run.anything.popup/53.27.1313.741@53.27.1313.741" timestamp="1577403467334" />
   </component>
 </project>
