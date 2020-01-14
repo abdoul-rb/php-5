@@ -11,3 +11,11 @@ Ce mini framework comprendra :
 En plus de cela, il y'a certaines choses à faire tel que : 
 1. Le maquettage sur [Figma](https://www.figma.com/file/MxVaSpJLmtZTrp491bfKQe/cms-project?node-id=0%3A1)
 2. La mise en place d'un Style Guide
+
+**Modal** : Bout de code factoriser à inclure dans d'autres vues.
+Il à la capacité de recentraliser un ensemble de fonctionnalité dont on pourra réutiliser.
+
+
+### Contruction de formulaire de façon dynamique à partir d'une variable qui lui sera passé.
+
+Avoir un tableau PHP contenant toutes les informations permettant de créer ce formulaire.

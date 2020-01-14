@@ -8,7 +8,8 @@ class helpers
 {
     
     /**
-     * getUrl renvoi l'url sous forme de chaîne à partir d'un controller et d'une action
+     * getUrl renvoi l'url sous forme de chaîne à partir d'un controller et d'une action.
+     * Permet d'avoir des URLs dynamiques.
      *
      * @param  mixed $controller
      * @param  mixed $action

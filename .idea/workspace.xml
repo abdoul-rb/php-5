@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5824013-ab6d-4286-87c8-b5bb7dde0c01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/www/script/captcha.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/views/modals/form.mod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Router.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/DB.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/DB.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/core/Helpers.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Helpers.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/models/users.model.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/users.model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/views/auth/register.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/auth/register.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +71,8 @@
       <workItem from="1577398556873" duration="5002000" />
       <workItem from="1577466751532" duration="3759000" />
       <workItem from="1577901150433" duration="27000" />
-      <workItem from="1579006669785" duration="331000" />
+      <workItem from="1579006669785" duration="7323000" />
+      <workItem from="1579014480929" duration="8261000" />
     </task>
     <servers />
   </component>
@@ -74,6 +80,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="374" y="201" width="680" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579016667109">
+      <screen x="53" y="27" width="1313" height="741" />
+    </state>
+    <state x="374" y="201" width="680" height="390" key="#com.intellij.fileTypes.FileTypeChooser/53.27.1313.741@53.27.1313.741" timestamp="1579016667109" />
     <state x="392" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577398531240">
       <screen x="53" y="27" width="1313" height="741" />
     </state>
@@ -82,11 +92,15 @@
       <screen x="53" y="27" width="1313" height="741" />
     </state>
     <state x="383" y="27" width="642" height="741" key="#site/Dockerfile/53.27.1313.741@53.27.1313.741" timestamp="1576789918955" />
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1577901159549">
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1579033742225">
       <screen x="53" y="27" width="1313" height="741" />
     </state>
     <state x="396" y="413" key="com.intellij.ide.util.TipDialog/1920.158.1366.768/0.185.1920.895@0.185.1920.895" timestamp="1576486421759" />
-    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1577901159549" />
+    <state x="324" y="216" key="com.intellij.ide.util.TipDialog/53.27.1313.741@53.27.1313.741" timestamp="1579033742225" />
+    <state x="53" y="27" width="709" height="741" key="find.popup" timestamp="1579030469773">
+      <screen x="53" y="27" width="1313" height="741" />
+    </state>
+    <state x="53" y="27" width="709" height="741" key="find.popup/53.27.1313.741@53.27.1313.741" timestamp="1579030469773" />
     <state x="373" y="175" key="run.anything.popup" timestamp="1577403467334">
       <screen x="53" y="27" width="1313" height="741" />
     </state>

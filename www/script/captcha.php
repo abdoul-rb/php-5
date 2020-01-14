@@ -43,12 +43,14 @@ for($i = 0; $i < strlen($text); $i++)
     
     $x = rand(0,400/1.5);
     $y = rand(0,200/1.5);
+
     imagepolygon($image, [
         rand(0,400/1.5), rand(0, 200/1.5),
         rand(0,400/1.5), rand(0, 200/1.5),
         rand(0,400/1.5), rand(0, 200/1.5),
     ], 2, imagecolorallocate($image, rand(1, 255), rand(1, 255), rand(1, 255)));
     //file_put_contents("./rand.txt", print_r(["x"=>$x,"y"=>$y], true), FILE_APPEND);
+    // git remote set-url origin git@github.com:abdoul-rb/php-5.git
     imagettftext($image, rand(11, 28), rand(0, 360), $x, $y, imagecolorallocate($image, rand(1, 255), rand(1, 255), rand(1, 255)), $randFont , $text[$i]);
 }
 

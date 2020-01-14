@@ -50,6 +50,7 @@ class DB
     }
 
     // Modifier un user on reset toute les info - eviter
+    // Peupler l'object automatiquement lorsqu'on fait un setID
     // setID
     public function populate()
     {
