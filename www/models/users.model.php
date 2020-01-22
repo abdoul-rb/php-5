@@ -58,55 +58,66 @@ class users extends DB
                 'id' => '',
                 'submit' => "S'inscrire"
             ],
+            
             'fields' => [
                 'firstname' => [
                     'type' => 'text',
                     'required' => true,
                     'placeholder' => 'Votre prénom',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
-                    'value' => ''
+                    'value' => '',
+                    'minlength' => 2,
+                    'maxlength' => 50,
+                    'errMsg' => '2 et 100 caractères',
                 ],
                 'lastname' => [
                     'type' => 'text',
                     'required' => true,
                     'placeholder' => 'Votre nom',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
-                    'value' => ''
+                    'value' => '',
+                    'minlength' => 2,
+                    'maxlength' => 100,
+                    'errMsg' => '2 et 100 caractères',
                 ],
                 'email' => [
                     'type' => 'email',
                     'required' => true,
                     'placeholder' => 'Votre email',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
-                    'value' => ''
+                    'value' => '',
+                    'errMsg' => 'Email incorrect',
                 ],
                 'password' => [
                     'type' => 'password',
                     'required' => true,
                     'placeholder' => 'Votre mot de passe',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
-                    'value' => ''
+                    'value' => '',
+                    'errMsg' => 'Mot de passe doit conténir une majuscule et une miniscule avec au moins 8 caractères',
                 ],
                 'passwordConfirm' => [
                     'type' => 'password',
                     'required' => true,
                     'placeholder' => 'Confirmer votre mot de passe',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
                     'value' => '',
-                    'confirmWith' => ''
+                    'confirmWith' => 'password',
+                    'errMsg' => 'Confirmation de mot de passe incorrect',
                 ],
                 'captcha' => [
                     'type' => 'captcha',
                     'required' => true,
                     'placeholder' => 'Saisir le texte',
-                    'class' => '',
+                    'class' => 'form-control',
                     'id' => '',
                     'value' => '',
+                    'errMsg' => 'Captcha incorrect',
                 ]
             ]
         ];

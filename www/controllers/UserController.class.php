@@ -19,6 +19,17 @@ class UserController
     
     public function registerAction()
     {
+
+        $configForm = users::getRegisterForm();
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
+            // Vérification des champs
+            $errors = Validator::formValidate($configForm, $_POST);
+
+
+        }
+
         $user = new users();
 
         $user->setFirstname('Abdoul');
@@ -30,6 +41,7 @@ class UserController
         $user->save();
 
         $myView = new View("register", "account");
+        $myView->assign('configForm', $configForm);
     }
     
     public function forgotPwdAction()
