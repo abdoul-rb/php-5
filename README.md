@@ -19,15 +19,15 @@ Il à la capacité de recentraliser un ensemble de fonctionnalité dont on pourr
 
 Pour un formulaire, il est impératif de le protéger des assauts de bots et de spams. Pour ce faire il faut intégrer un système de reconnaissance d'utilisateur humain, plus communément appelé **CAPTCHA**.
 
-Générer un texte aléatoire d'une longueur aléatoire entre 5 et 7 caractères
+Générer un texte aléatoire d'une longueur aléatoire entre 5 et 7 caractères.
 Insérer ce texte dans l'image avec :
-* Une police aléatoire par caractère provenant d'un dossier "fonts" avec des fichiers ttf
-* Attention si je rajoute une police dans le dossier cela doit marcher automatiquement
-* Un angle aléatoire par caractère
-* Une couleur aléatoire par caractère
-* Une taille et une position aléatoire par caractère
-* Un fond aléatoire
-* Un nombre de forme géométrique aléatoire utilisant des couleurs des caractères
+* Une police aléatoire par caractère provenant d'un dossier "__fonts__" avec des fichiers __ttf__.
+* Attention si je rajoute une police dans le dossier cela doit marcher automatiquement.
+* Un angle aléatoire par caractère.
+* Une couleur aléatoire par caractère.
+* Une taille et une position aléatoire par caractère.
+* Un fond aléatoire.
+* Un nombre de forme géométrique aléatoire utilisant des couleurs des caractères.
 
 __ATTENTION LE CAPTCHA DOIT ETRE LISIBLE !!!__
 

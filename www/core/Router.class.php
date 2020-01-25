@@ -10,8 +10,8 @@
  *
  * @since 1.0
  *
- * @param int    $uri  L'URL passé, sur laquelle on se trouve
- * @param string $listOfRoutes La liste des routes récupéré depuis le fichier de routes
+ * @param string $uri  L'URL passé, sur laquelle on se trouve
+ * @param string $listOfRoutes La liste des routes récupéré depuis le fichier de routes <em>routes.yml</em>
  */
 class Router
 {

@@ -15,54 +15,50 @@ class Validator
         // Taleau qui va conténir les erreurs trouvé dans le formulaire.
         $listOfErrors = [];
 
-        // Vérif du nombre de input
-        if( count($config['fields']) == count($data))
+        //Vérification du bon nb de input
+        if( count($config["fields"]) == count($data) )
         {
-            foreach( $config['fields'] as $name => $configField )
+            foreach($config["fields"] as $name => $configField)
             {
-                if( isset($data[$name] ) && ( $configField['required'] && !empty( $data[$name] ) ) )
+                //Vérifier que les names existent et Vérifier les required
+                if( isset($data[$name]) && ($configField["required"] && !empty($data[$name])))
                 {
+                    //Vérifier minlength
+                    //Vérifier maxlength
 
-                    // Vérifier le format de l'email
-                    if( $configField['email'] == 'email')
+                    //Vérifier le format de l'email
+                    if($configField["type"]=="email")
                     {
-                        if( self::emailValidate( $data[$name] ) )
+                        if( self::emailValidate($data[$name]))
                         {
-                            // Vérifier l'unicité de l'email
+                            //vérifier l'unicté de l'email
                         }
-                        else 
+
+                        else
                         {
-                            $listOfErrors[] = $configField['errMsg'];
+                            $listOfErrors[] = $configField["errMsg"];
                         }
                     }
-                    elseif($configField[''])
-                    {
 
+                    elseif($configField["type"]="password"){
+
+                    //Vérifier le format du pwd
+                    //Vérifier la confirmation du pwd
                     }
+
+                    //Vérifier le captcha
+                }
+                else
+                {
+                    return ["Tentative de hack !!!"];
                 }
             }
         }
+
         else
         {
-            return ['Tentative de hack !!!'];
-            // Mettre l'Ip et la géo peut être
+            return ["Tentative de hack !!!"];
         }
-
-            // Vérifier que les names existent et les required
-
-        // Vérif que les names existent
-
-        
-
-        // Vérifier le minlength
-        // Vérifier le maxlength
-
-        
-        
-        // Vérifier l'unicité de l'email
-
-
-        // Vérif le captcha
 
         return $listOfErrors;
     }
@@ -71,5 +67,4 @@ class Validator
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
-
 }

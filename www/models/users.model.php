@@ -46,6 +46,11 @@ class users extends DB
         $this->status = $status;
     }
 
+    public static function getLoginForm()
+    {
+        return [];
+    }
+
     /**
      * @return array un formulaire à partir des données du tableau qui lui sera passé.
      */
@@ -66,7 +71,6 @@ class users extends DB
                     'placeholder' => 'Votre prénom',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'minlength' => 2,
                     'maxlength' => 50,
                     'errMsg' => '2 et 100 caractères',
@@ -77,7 +81,6 @@ class users extends DB
                     'placeholder' => 'Votre nom',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'minlength' => 2,
                     'maxlength' => 100,
                     'errMsg' => '2 et 100 caractères',
@@ -88,7 +91,6 @@ class users extends DB
                     'placeholder' => 'Votre email',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'errMsg' => 'Email incorrect',
                 ],
                 'password' => [
@@ -97,7 +99,6 @@ class users extends DB
                     'placeholder' => 'Votre mot de passe',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'errMsg' => 'Mot de passe doit conténir une majuscule et une miniscule avec au moins 8 caractères',
                 ],
                 'passwordConfirm' => [
@@ -106,7 +107,6 @@ class users extends DB
                     'placeholder' => 'Confirmer votre mot de passe',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'confirmWith' => 'password',
                     'errMsg' => 'Confirmation de mot de passe incorrect',
                 ],
@@ -116,7 +116,6 @@ class users extends DB
                     'placeholder' => 'Saisir le texte',
                     'class' => 'form-control',
                     'id' => '',
-                    'value' => '',
                     'errMsg' => 'Captcha incorrect',
                 ]
             ]

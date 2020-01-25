@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Génerer automatiquement des constantes a partir des fichiers .env .dev  et/ou .prod
- * Class ConstLoader
+ * Génerer automatiquement des constantes à partir des fichiers d'environnements : .env, .dev, .prod.
  *
  * @since 1.0
  *
- * @param string $text Contient tout le contenu de .env et de .dev
- * @param string $extend fichier d'extension qui vient completé  le .env
+ * @param string $text Contient toutes les variables d'environnements donc en plus
+ * du .env contiendra soit le .dev ou le .prod.
+ * @param string $extend Fichier d'extension qui vient completé le .env en fonction de 
+ * l'environnement sur lequel on se trouve. | Ce sera soit le .prod, soit le .dev
  */
 class ConstLoader
 {
@@ -29,6 +30,11 @@ class ConstLoader
         $this->load();
     }
 
+    /**
+     * Vérifie si les fichiers d'environnements existent
+     * 
+     * @return void
+     */
     public function checkFiles()
     {
         if (!file_exists(".env")) {
@@ -38,7 +44,11 @@ class ConstLoader
         }
     }
 
-    // Ira chercher deux fichier le .env .dev ou .prod
+    /**
+     * Ira chercher deux fichier le .env .dev ou .prod
+     * 
+     * @return void
+     */
     public function getFilesEnv()
     {
         //.dev ou .prod
@@ -48,7 +58,11 @@ class ConstLoader
         $this->text .= "\n" . trim(file_get_contents(".env"));
     }
 
-    // Transforme le contenu de nos fichiers en Constantes
+    /**
+     * Transforme le contenu de nos fichiers en constantes
+     * 
+     * @return void
+     */
     public function load()
     {
         $lines = explode("\n", $this->text);
