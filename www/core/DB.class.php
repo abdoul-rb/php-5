@@ -10,7 +10,7 @@ class DB
     public function __construct()
     {
         try {
-            $this->pdo = new PDO(DRIVER_DB.":host=".HOST_DB.";dbname=".NAME_DB, USER_DB, PWD_DB);
+            $this->pdo = new PDO(DRIVER_DB . ":host=" . HOST_DB . ";dbname=" . NAME_DB, USER_DB, PWD_DB);
         } catch (Exception $e) {
             die('Erreur SQL' . $e->getMessage());
         }
