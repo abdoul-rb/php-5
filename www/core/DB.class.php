@@ -57,10 +57,14 @@ class DB
 
     public function hydrate(array $data)
     {
-        if($data) { // Si $data n'est pas vide
-            foreach($data as $attName => $attValue) {
+        if($data)
+        {
+            foreach($data as $attName => $attValue)
+            {
                 $settername = 'set'. ucfirst($attName);
-                if(method_exists($settername)) {
+
+                if(method_exists($settername))
+                {
                     $this->$settername($attValue);
                 }
             }
