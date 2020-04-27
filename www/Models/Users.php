@@ -1,6 +1,9 @@
 <?php
+namespace App\Models;
 
-class users extends DB
+use App\Core\Model;
+
+class Users extends Model
 {
     protected $id = null;
     protected $firstname;
@@ -11,6 +14,7 @@ class users extends DB
 
     public function __construct()
     {
+        #die("construct parent");
         parent::__construct();
     }
 

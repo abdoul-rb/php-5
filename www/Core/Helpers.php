@@ -1,4 +1,5 @@
 <?php
+namespace App\Core;
 
 /**
  * Class contenant des fonctions utilitaires

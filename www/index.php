@@ -1,6 +1,9 @@
 <?php
 
-require 'core/Autoloader.class.php';
+require 'Core/Autoloader.php';
+
+use App\Core\ConstLoader;
+use App\Core\Router;
 
 new ConstLoader();
 

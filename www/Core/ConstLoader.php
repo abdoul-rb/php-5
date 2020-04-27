@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 /**
  * Génerer automatiquement des constantes a partir des fichiers .env .dev  et/ou .prod
  * Class ConstLoader

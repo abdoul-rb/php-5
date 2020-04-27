@@ -1,17 +1,19 @@
 <?php
 
+namespace App\Core;
+
 /**
  * Permet de gérer le routing
  *
  * * Markdown style lists function too
  * * Just try this out once
  *
+ * @param int $uri L'URL passé, sur laquelle on se trouve
+ * @param string $listOfRoutes La liste des routes récupéré depuis le fichier de routes
  * @author  Mike van Riel <me@mikevanriel.com>
  *
  * @since 1.0
  *
- * @param int    $uri  L'URL passé, sur laquelle on se trouve
- * @param string $listOfRoutes La liste des routes récupéré depuis le fichier de routes
  */
 class Router
 {
@@ -27,26 +29,20 @@ class Router
     public function resolveRoute()
     {
         if (!empty($this->listOfRoutes[$this->uri])) {
-            $controller = $this->listOfRoutes[$this->uri]['controller'] . 'Controller';
+            $controller = 'App\Controllers\\' . ucfirst($this->listOfRoutes[$this->uri]['controller'] . "Controller");
             $action = $this->listOfRoutes[$this->uri]['action'] . 'Action';
 
-            // Vérification s'il existe dans le dossier/controllers une class Controller
-            if (file_exists("controllers/" . $controller . ".class.php")) {
-                include "controllers/" . $controller . ".class.php";
+            // Vérification s'il existe dans le dossier/Controllers une class Controller
+            if (class_exists($controller)) {
+                $controller = new $controller();
 
-                if (class_exists($controller)) {
-                    $controller = new $controller();
-
-                    if (method_exists($controller, $action)) {
-                        $controller->$action();
-                    } else {
-                        throw new Exception('Method not found');
-                    }
+                if (method_exists($controller, $action)) {
+                    $controller->$action();
                 } else {
-                    throw new Exception('Class not found');
+                    throw new Exception('Method not found');
                 }
             } else {
-                throw new Exception('File not found');
+                throw new Exception('Class not found');
             }
         } else {
             //Renvoyer une page 404 définie lorsque $listOfRoutes[$uri] est vide
@@ -58,20 +54,15 @@ class Router
 
 /**
  * $uri = trim($uri, '/');
-
  * $args = explode('/', $uri);
-
  * $controller = ucfirst(((empty($args[0])) ? 'default' : $args[0]) . 'Controller';
  * $action = ((empty($args[1])) ? 'default' : $args[1]) . 'Action';
-
- * if(file_exists('controllers/' . $controller . '.class.php'))
+ * if(file_exists('Controllers/' . $controller . '.class.php'))
  * {
- *    include 'controllers/' . $controller . '.class.php';
-
+ *    include 'Controllers/' . $controller . '.class.php';
  *    if(class_exists($controller))
  *    {
  *        $controller = new $controller();
-
  *        if(method_exists($controller, $action))
  *        {
  *            $controller->$action();
