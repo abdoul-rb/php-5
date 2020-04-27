@@ -23,7 +23,7 @@ class UserController
         $user = new users();
         $user->hydrate( [
             'id' => 1,
-            'firstname' => 'Yves',
+            'firstname' => 'Rahim',
         ]);
 
         $user->save();
