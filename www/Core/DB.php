@@ -106,14 +106,28 @@ class DB
     /**
      * Compte le nombre d'éléments d'une table.
      */
-    public function count() {
-        $request = 'SELECT COUNT(*) AS myCount FROM' . $this->table;
-        $result = $this->sql($request);
-        return $result['myCount'];
+    public function count(array $params): int {
+        $request = 'SELECT COUNT(*) AS myCount FROM' . $this->table . "WHERE ";
+
+        foreach ($params as $key => $value) {
+            if(is_string($value)) {
+                $comparator = 'LIKE';
+            } else {
+                $comparator = '=';
+            }
+            $request .= " $key $comparator :$key AND";
+            unset($params[$key]);
+        }
+        $request = rtrim($request, 'AND');
+        $result = $this->sql($request, $params);
+        return $result->fetchColumn();
     }
 
     public function delete(int $id): bool {
-        //
+        $request = "DELETE FROM $this->table WHERE id = :id";
+        $result = $this->sql($request, [':id' => $id]);
+
+        return true;
     }
 
 
