@@ -1,5 +1,6 @@
 <?php
 namespace App\Core;
+use App\Core\Model;
 
 class DB
 {
@@ -37,11 +38,10 @@ class DB
         if ($parameters) {
             $queryPrepared = $this->pdo->prepare($request);
             $queryPrepared->execute($parameters);
-
             return $queryPrepared;
         } else {
             $queryPrepared = $this->pdo->prepare($request);
-
+            $queryPrepared->execute();
             return $queryPrepared;
         }
     }
@@ -51,8 +51,8 @@ class DB
      * @param int $id
      * @return l'objet courant avec les données remplies
      */
-    public function find(int $id) {
-        $request = 'SELECT * FROM ' . $this->table . ' WHERE id = :id';
+    public function find(int $id): ?Model {
+        $request = "SELECT * FROM $this->table WHERE id = :id";
 
         $result = $this->sql($request, [':id' => $id]);
         $row = $result->fetch();
@@ -65,51 +65,85 @@ class DB
         }
     }
 
+    public function findBy(array $params, array $order = null): array {
+        $results = array();
+        $request = 'SELECT * FROM' . $this->table . 'WHERE ';
+
+        foreach ($params as $key => $value) {
+            if(is_string($value)) {
+                $comparator = 'LIKE';
+            } else {
+                $comparator = '=';
+            }
+            $request .= "$key $comparator :$key AND";
+            $params[":$key"] = $value;
+            unset($params[$key]);
+        }
+        $request = rtrim($request, 'AND');
+
+        if($order) {
+            $request .= "ORDER BY " . key($order) . " " . $order[$key($order)];
+        }
+        $results =  $this->sql($request, $params);
+        $rows = $results->fetchAll();
+
+        foreach ($rows as $row) {
+            $obj = new $this->class();
+            array_push($results, $obj->hydrate($row));
+        }
+        return $results;
+    }
+
     /**
      * @return un tableau d'objet rempli
      */
     public function findAll() {
         $request = 'SELECT * FROM' . $this->table;
-
-        $result = $this->sql($request);
-
-        return $result;
+        $results = $this->sql($request);
+        return $results;
     }
 
     /**
      * Compte le nombre d'éléments d'une table.
      */
     public function count() {
-        $request = 'SELECT COUNT(*) FROM' . $this->table;
-
+        $request = 'SELECT COUNT(*) AS myCount FROM' . $this->table;
         $result = $this->sql($request);
+        return $result['myCount'];
+    }
 
-        return $result;
+    public function delete(int $id): bool {
+        //
     }
 
 
-    public function save()
+    public function save($objectToSave)
     {
         // Récupération du nom de la table de façon dynamique
-        $objectVars = get_object_vars($this);
-        $classVars = get_class_vars(get_class());
-        $columnsData = array_diff_key($objectVars, $classVars);
-        $columns = array_keys($columnsData);
+        $objectArray = $objectToSave->__toArray();
+        $columnsData = array_values($objectArray);
+        $columns = array_keys($objectArray);
+        // On met 2 points devant chaque clé du tableau
+        $params = array_combine(
+            array_map(function ($key) {
+                return ':' . $key;
+            }, array_keys($objectArray)),
+            $objectArray
+        );
 
-        if (!is_numeric($this->id)) {
+        if (!is_numeric($objectToSave->getId())) {
             // INSERT -> Requête dynamique et préparée
-            $sql = "INSERT INTO " . $this->table . " (" . implode(",", $columns) . ") VALUES (:" . implode(",:", $columns) . ");";
+            $request = "INSERT INTO " . $this->table . " (" . implode(",", $columns) . ") VALUES (:" . implode(",:", $columns) . ");";
         } else {
             // UPDATE
             foreach ($columns as $column) {
                 $sqlUpdate[] = $column . "=:" . $column;
             }
 
-            $sql = "UPDATE " . $this->table . " SET " . implode(",", $sqlUpdate) .  " WHERE id=:id;";
+            $request = "UPDATE " . $this->table . " SET " . implode(",", $sqlUpdate) .  " WHERE id=:id;";
         }
 
-        $queryPrepared = $this->pdo->prepare($sql);
-        $queryPrepared->execute($columnsData);
+        $this->sql($request, $params);
     }
 
     // Modifier un user on reset toute les info - eviter

@@ -44,13 +44,6 @@ class UserController
 
         $user->save();
 
-        /* $user->setFirstname('Abdoul');
-        $user->setlastname('Rahim');
-        $user->setEmail('abdoul.rahim@bah.fr');
-        $user->setPassword(" Secret_");
-        $user->setStatus(0);
-        $user->save();*/
-
         $myView = new View("register", "account");
     }
     

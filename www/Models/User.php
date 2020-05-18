@@ -3,7 +3,7 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class Users extends Model
+class User extends Model
 {
     protected $id = null;
     protected $firstname;
@@ -14,7 +14,6 @@ class Users extends Model
 
     public function __construct()
     {
-        #die("construct parent");
         parent::__construct();
     }
 

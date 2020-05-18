@@ -3,13 +3,13 @@
 namespace App\Managers;
 
 use App\Core\DB;
-use App\Models\users;
+use App\Models\User;
 
 class UserManager extends DB {
 
     public function __construct()
     {
-        parent::__construct(users::class, 'users');
+        parent::__construct(User::class, 'users');
     }
 
     public function getUserAdmin(){
