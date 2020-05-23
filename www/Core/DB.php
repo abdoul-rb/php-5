@@ -1,20 +1,25 @@
 <?php
 namespace App\Core;
-use App\Core\Model;
+
+use App\Core\Connection\DBInterface;
+use App\Core\Connection\PDOConnection;
 
 class DB
 {
     private $table;
-    private $pdo;
+    private $connection;
+    protected $class;
     private static $_instance;
 
     // SINGLETON
-    public function __construct()
+    public function __construct(string $class, string $table, DBInterface $connection = null)
     {
-        try {
-            $this->pdo = new PDO(DRIVER_DB.":host=".HOST_DB.";dbname=".NAME_DB, USER_DB, PWD_DB);
-        } catch (Exception $e) {
-            die('Erreur SQL' . $e->getMessage());
+        $this->class = $class;
+        $this->table = PREFIXE_DB . $table;
+        $this->connection = $connection;
+
+        if(NULL === $connection) {
+            $this->connection = new PDOConnection();
         }
 
         $this->table = PREFIXE_DB . get_called_class();
@@ -28,25 +33,6 @@ class DB
     }
 
     /**
-     * Permet d'effectuer une requête PDO vers la base de données
-     * @param $request la requête à effectuer
-     * @param null $parameters les paramètres de la requête
-     * @return mixed
-     */
-    protected function sql($request, $parameters = null)
-    {
-        if ($parameters) {
-            $queryPrepared = $this->pdo->prepare($request);
-            $queryPrepared->execute($parameters);
-            return $queryPrepared;
-        } else {
-            $queryPrepared = $this->pdo->prepare($request);
-            $queryPrepared->execute();
-            return $queryPrepared;
-        }
-    }
-
-    /**
      * Récupère un élément de l'objet courant en base de données.
      * @param int $id
      * @return l'objet courant avec les données remplies
@@ -55,7 +41,7 @@ class DB
         $request = "SELECT * FROM $this->table WHERE id = :id";
 
         $result = $this->sql($request, [':id' => $id]);
-        $row = $result->fetch();
+        $row = $result->getOneOrNullResult();
 
         if ($row) {
             $object = new $this->class();
@@ -85,7 +71,7 @@ class DB
             $request .= "ORDER BY " . key($order) . " " . $order[$key($order)];
         }
         $results =  $this->sql($request, $params);
-        $rows = $results->fetchAll();
+        $rows = $results->getArrayResult();
 
         foreach ($rows as $row) {
             $obj = new $this->class();
@@ -120,7 +106,7 @@ class DB
         }
         $request = rtrim($request, 'AND');
         $result = $this->sql($request, $params);
-        return $result->fetchColumn();
+        return $result->getValueResult();
     }
 
     public function delete(int $id): bool {
@@ -129,7 +115,6 @@ class DB
 
         return true;
     }
-
 
     public function save($objectToSave)
     {
