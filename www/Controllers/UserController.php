@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Managers\UserManager;
 use App\Core\Exceptions\NotFoundException;
 
-class UserController
+class UserController extends Controller
 {
     public function defaultAction()
     {
@@ -29,7 +29,7 @@ class UserController
         $user = new User();
 
         $user->setFirstname('Abdoul');
-        $user->setlastname('Rahim');
+        $user->setLastname('Rahim');
         $user->setEmail('abdoul.rahim@bah.fr');
         $user->setPassword(" Secret_");
         $user->setStatus(0);

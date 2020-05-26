@@ -17,11 +17,17 @@ class User extends Model
         parent::__construct();
     }
 
-    public function setID($id)
+    public function setID($id): self
     {
         // Faire du populate lorsque je fais un setID - appeler une methode qui va aller chercher tout les info
         // sur les user contiendra toute la data methode populate créer dans DB
         $this->id = $id;
+        return $this;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 
     public function setFirstname($firstname)

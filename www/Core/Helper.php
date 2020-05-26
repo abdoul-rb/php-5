@@ -5,7 +5,7 @@ namespace App\Core;
  * Class contenant des fonctions utilitaires
  */
 
-class helpers
+class Helper
 {
     
     /**
