@@ -2,7 +2,9 @@
 namespace App\Controllers;
 
 use App\Core\View;
-use App\Models\Users;
+use App\Models\User;
+use App\Managers\UserManager;
+use App\Core\Exceptions\NotFoundException;
 
 class UserController
 {
@@ -24,7 +26,7 @@ class UserController
 
     public function registerAction()
     {
-        $user = new Users();
+        $user = new User();
 
         $user->setFirstname('Abdoul');
         $user->setlastname('Rahim');
@@ -51,4 +53,20 @@ class UserController
     {
         $myView = new View("forgotPwd", "account");
     }
+
+    public function getAction($params)
+    {
+        $userManager = new UserManager();
+        $user = $userManager->find($params['id']);
+
+        if(!$user) {
+            throw new NotFoundException("User not found");
+        }
+        $users = $userManager->findAll();
+        $partialUsers = $userManager->findBy(['firstname' => "Fadyl%"], ['id' => 'desc']);
+        $userManager->delete(5);
+
+        echo "get user";
+    }
+
 }

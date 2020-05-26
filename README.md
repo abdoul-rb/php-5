@@ -12,27 +12,13 @@ En plus de cela, il y'a certaines choses à faire tel que :
 1. Le maquettage sur [Figma](https://www.figma.com/file/MxVaSpJLmtZTrp491bfKQe/cms-project?node-id=0%3A1)
 2. La mise en place d'un Style Guide
 
-```php
-public function find(int $id)
-{
-$sql = "SELECT * FROM $this->table where id = :id";
-
-$result = $this->sql($sql, [':id' => $id]);
-
-$row = $result->fetch();
-
-if ($row) {
-
-$object = new $this->class();
-return $object->hydrate($row);
-} else {
-return null;
-}
-
-}
-```
-
-## GITLAB MDU PROF
+## GITLAB DU PROF
 > https://gitlab.com/Lewisroy/mvcphp
 
 > https://docs.google.com/presentation/d/1jlM8Dwoqhle5IY4UxPn9vYbv2O7167lwKCbAOsvfFxw/edit#slide=id.g7ff184f356_0_5
+
+> https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Strategy/README.html
+
+> https://designpatternsphp.readthedocs.io/en/latest/More/Repository/README.html
+
+## Les design pattern 
