@@ -20,9 +20,9 @@ class PDOConnection implements DBInterface
     }
 
     /**
-     * Permet d'effectuer une requête PDO vers la base de données
-     * @param string $request la requête à effectuer
-     * @param array $parameters les paramètres de la requête
+     * Permet d'effectuer une requête PDO vers la base de données.
+     * @param string $request la requête à effectuer.
+     * @param array $parameters les paramètres de la requête.
      * @return mixed
      */
     public function query(string $request, array $parameters = null)

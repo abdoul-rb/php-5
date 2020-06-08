@@ -1,6 +1,9 @@
 <?php
 
 require 'Core/Autoloader.php';
+use App\Core\Autoloader;
+
+Autoloader::register();
 
 use App\Core\ConstLoader;
 use App\Core\Router;
