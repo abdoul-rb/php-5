@@ -6,6 +6,14 @@ class FormBuilder implements FormBuilderInterface
 {
     private $elements = [];
 
+    public function add(string $name, string $type, array $options = []): FormBuilderInterface {
+        $this->elements[$name] = (new ElementFormBuilder())->setName($name)
+                                                           ->setType($type)
+                                                           ->setOptions($options);
+
+        return $this;
+    }
+
     public function remove(string $name): FormBuilderInterface {
         unset($this->elements[$name]);
 
