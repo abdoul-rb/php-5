@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core\FormBuilder;
+namespace App\Core\Builder\FormBuilder;
 
 class FormBuilder implements FormBuilderInterface
 {

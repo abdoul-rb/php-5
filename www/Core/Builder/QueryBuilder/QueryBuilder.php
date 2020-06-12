@@ -1,5 +1,5 @@
 <?php
-namespace App\Core;
+namespace App\Core\Builder\QueryBuilder;
 
 use App\Core\Connection\PDOConnection;
 

@@ -62,6 +62,21 @@ class View
         
         include "views/modals/".$modal.".mod.php";
     }
+
+    /**
+     * Méthode permettant d'fficher un formulaire en lui passant le nom dans la data (ici formProfile) et affiche la vue
+     * @param string $formName
+     * @param string $formTemplate = 'base'
+     * @return string
+     */
+    public function formView(string $formName, string $formTemplate) {
+        if(!file_exists('views/form' . $formTemplate . '.view.php')) {
+            die('Le template de formulaire n\'existe pas.');
+        }
+
+        $form = $this->data[$formName];
+        return 'views/form' . $formTemplate . '.view.php';
+    }
     
     public function __destruct()
     {
