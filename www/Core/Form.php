@@ -23,4 +23,49 @@ class Form
           'attr' => [],
         ];
     }
+
+    /**
+     *
+     */
+    public function associateValue()
+    {
+
+    }
+
+    /**
+     * Récupère les elements du builder
+     * @return array|null
+     */
+    public function getElements(): ?array {
+        return $this->builder->getElements();
+    }
+
+    public function handle(): void {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $isSubmit = $this->checkIsSubmitted();
+
+            if($isSubmit) {
+                $this->checkIsValid();
+            }
+            
+            $this->updateObject();
+        }
+    }
+
+    private function checkIsSubmitted()
+    {
+    }
+
+    public function isSubmitted()
+    {
+        return $this->isSubmit;
+    }
+
+    public function checkIsValid()
+    {
+    }
+
+    public function updateObject()
+    {
+    }
 }
