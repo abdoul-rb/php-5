@@ -22,5 +22,6 @@ En plus de cela, il y'a certaines choses à faire tel que :
 > https://designpatternsphp.readthedocs.io/en/latest/More/Repository/README.html
 
 > https://docs.google.com/presentation/d/1jlM8Dwoqhle5IY4UxPn9vYbv2O7167lwKCbAOsvfFxw/edit#slide=id.g7ff184f356_0_5
+> https://docs.google.com/presentation/d/1jlM8Dwoqhle5IY4UxPn9vYbv2O7167lwKCbAOsvfFxw/edit#slide=id.g7ff184f356_0_5
 
 ## Les design pattern 
